@@ -1,0 +1,24 @@
+# Assigning initial value to int variable
+$int = 0;
+
+# Outputing static int results to user
+print "static int: " , staticScoping(), "\n";
+# Outputting dynamic int results to user
+print "dynamic int: " , dynamicScoping();
+
+# function to return int variable
+sub function{
+    return $int;
+}
+
+# Assigning value to int using dynamic scoping
+sub dynamicScoping {
+    local $int = 1;
+    return function();
+}
+
+# Assigning value to int using static scoping
+sub staticScoping {
+    my $int = 1;
+    return function();
+}
